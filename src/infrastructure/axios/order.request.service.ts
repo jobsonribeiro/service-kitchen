@@ -26,7 +26,7 @@ export class OrderRequestService {
         const result = await this.requestService.makeRequest<
             OrderRequest,
             any
-            >(process.env.ORDER_SERVICE_URL || "http://localhost:3000", method, `${endpoint}`, body);
+            >(process.env.ORDER_SERVICE_URL, method, `${endpoint}`, body);
         this.logger.debug(
             `${baseLog} order service response ${JSON.stringify(result)}`,
         );
